@@ -1,0 +1,18 @@
+{% extends "catalogo/base.html" %}
+
+{% block title %}Detalles del Libro{% endblock %}
+
+{% block content %}
+<h1 class="text-2xl font-bold mb-4">{{ libro.titulo }}</h1>
+<ul class="list-disc pl-6">
+    <li><strong>Año de publicación:</strong> {{ libro.anio_publicacion }}</li>
+    <li><strong>Género:</strong> {{ libro.genero }}</li>
+    <li><strong>ISBN:</strong> {{ libro.isbn }}</li>
+    <li><strong>Autor:</strong> 
+        <a href="{% url 'detalle_autor' libro.autor.pk %}" class="text-blue-600">
+            {{ libro.autor }}
+        </a>
+    </li>
+</ul>
+<a href="{% url 'listado_libros' %}" class="text-blue-600 mt-4 block">← Volver al listado de libros</a>
+{% endblock %}

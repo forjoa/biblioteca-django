@@ -1,0 +1,33 @@
+{% extends "catalogo/base.html" %}
+
+{% block title %}Listado de Autores{% endblock %}
+
+{% block content %}
+<h1 class="text-2xl font-bold mb-4">Listado de Autores</h1>
+<table class="table-auto border-collapse border border-gray-300 w-full">
+    <thead class="bg-gray-100">
+        <tr>
+            <th class="border border-gray-300 px-4 py-2">Nombre</th>
+            <th class="border border-gray-300 px-4 py-2">Apellidos</th>
+            <th class="border border-gray-300 px-4 py-2">Fecha de Nacimiento</th>
+            <th class="border border-gray-300 px-4 py-2">Detalles</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for autor in autores %}
+        <tr>
+            <td class="border border-gray-300 px-4 py-2">{{ autor.nombre }}</td>
+            <td class="border border-gray-300 px-4 py-2">{{ autor.apellidos }}</td>
+            <td class="border border-gray-300 px-4 py-2">{{ autor.fecha_nacimiento }}</td>
+            <td class="border border-gray-300 px-4 py-2">
+                <a href="{% url 'detalle_autor' autor.pk %}" class="text-blue-600">Ver más</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="4" class="text-center py-4">No hay autores disponibles.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

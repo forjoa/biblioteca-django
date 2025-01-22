@@ -1,0 +1,53 @@
+# Entornos virtuales
+env/
+venv/
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.sqlite3
+
+# Archivos de configuración del entorno
+.env
+
+# Configuración específica de IDEs/editors
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+
+# Archivos generados por el sistema operativo
+Thumbs.db
+desktop.ini
+
+# Archivos de logs
+*.log
+
+# Archivos de migraciones generados automáticamente
+db.sqlite3
+migrations/*
+
+# Excepto el archivo __init__.py de las migraciones
+!migrations/__init__.py
+
+# Archivos estáticos generados
+staticfiles/
+media/
+
+# Archivos de compilación de Django
+*.mo
+*.pot
+
+# Dependencias generadas por pip
+pip-log.txt
+
+# Archivos de compilación de test coverage
+.coverage
+.tox/
+.cache/
+coverage.xml
+nosetests.xml
+
+# Archivos de PyCharm
+.pytest_cache/
